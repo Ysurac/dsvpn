@@ -1,0 +1,28 @@
+#!/bin/sh -e
+
+test $DEBIAN_SCRIPT_DEBUG && set -v -x
+
+action="$1"
+oldversion="$2"
+
+umask 022
+DSVPN_PASS=${DSVPN_PASS:-$(od  -vN "32" -An -tx1 /dev/urandom | tr '[:lower:]' '[:upper:]' | tr -d " \n")}
+# use debconf
+. /usr/share/debconf/confmodule
+
+if [ ! -f "/etc/dsvpn/dsvpn0.key" ]; then
+	echo "$DSVPN_PASS" > /etc/dsvpn/dsvpn0.key
+fi
+
+if ! grep -q tun /etc/modules ; then
+	echo tun >> /etc/modules
+fi
+
+systemctl enable dsvpn-server@dsvpn0.service
+systemctl restart dsvpn-server@dsvpn0.service
+
+db_stop
+
+#DEBHELPER#
+exit 0
+# vim:set ai et sts=2 sw=2 tw=0:

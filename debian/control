@@ -1,0 +1,12 @@
+Source: omr-dsvpn
+Section: net
+Priority: optional
+Maintainer: OpenMPTCProuter <contact@openmptcprouter.com>
+Build-Depends: debhelper (>= 9), build-essential, libsodium-dev, pkg-config
+Standards-Version: 3.9.8
+Homepage: https://github.com/angt/glorytun
+
+Package: omr-dsvpn
+Architecture: any
+Description:  A Dead Simple VPN
+ DSVPN is a Dead Simple VPN
