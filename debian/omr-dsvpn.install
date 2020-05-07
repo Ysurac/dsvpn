@@ -1,3 +1,4 @@
 debian/dsvpn0 etc/dsvpn
 debian/*.service lib/systemd/system
 dsvpn usr/bin
+debian/dsvpn-run usr/local/bin
