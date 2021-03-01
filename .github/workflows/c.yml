@@ -11,6 +11,9 @@ jobs:
       - name: make
         run: make
 
+      - name: install dependencies
+        run: sudo apt-get install debhelper libsodium-dev
+
       - name: Build Debian package
         run: dpkg-buildpackage -b -us -uc
 
