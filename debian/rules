@@ -29,7 +29,7 @@ DESTDIR=$(CURDIR)/debian/omr-dsvpn
 #	dh_auto_configure -- \
 #	    --disable-static
 
-#override_dh_auto_install:
-#	mv glorytun glorytun-tcp
+override_dh_auto_install:
+	dh_auto_install -- prefix=/usr
 
-#override_dh_usrlocal:
+override_dh_usrlocal:
