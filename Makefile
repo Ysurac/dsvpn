@@ -1,6 +1,6 @@
 CFLAGS_FILE?=.cflags
 COMPILE_TEST_FILE?=.test.c
-PREFIX?=/usr/local
+PREFIX?=/usr
 
 all: dsvpn
 
