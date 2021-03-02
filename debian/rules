@@ -15,7 +15,6 @@ export DH_VERBOSE = 1
 #DEB_CONFIGURE_EXTRA_FLAGS += --program-suffix=-tcp
 
 DESTDIR=$(CURDIR)/debian/omr-dsvpn
-PREFIX=$(CURDIR)/debian/omr-dsvpn
 
 %:
 	dh $@
@@ -33,4 +32,4 @@ PREFIX=$(CURDIR)/debian/omr-dsvpn
 #override_dh_auto_install:
 #	mv glorytun glorytun-tcp
 
-override_dh_usrlocal:
+#override_dh_usrlocal:
