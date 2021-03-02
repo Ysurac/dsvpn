@@ -15,6 +15,7 @@ export DH_VERBOSE = 1
 #DEB_CONFIGURE_EXTRA_FLAGS += --program-suffix=-tcp
 
 DESTDIR=$(CURDIR)/debian/omr-dsvpn
+PREFIX=$(CURDIR)/debian/omr-dsvpn
 
 %:
 	dh $@
